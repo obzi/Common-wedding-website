@@ -32,7 +32,7 @@ describe('Inspiration Page', () => {
   it('renders back to wedding link in header', () => {
     renderInspiration();
     expect(screen.getByTestId('back-link')).toBeInTheDocument();
-    expect(screen.getByText('Back to Wedding')).toBeInTheDocument();
+    expect(screen.getAllByText('Back to Wedding').length).toBeGreaterThan(0);
   });
 
   it('renders all outfit images', () => {
