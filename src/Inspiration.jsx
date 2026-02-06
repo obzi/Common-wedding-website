@@ -132,20 +132,19 @@ export default function Inspiration() {
               className="relative group"
               data-testid={`outfit-image-${index}`}
             >
-              <div className="aspect-[3/4] bg-sage-100 rounded-2xl overflow-hidden shadow-lg">
+              <div className="aspect-[3/4] bg-theme-100 rounded-2xl overflow-hidden shadow-lg">
                 <img
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
                 />
               </div>
               <div className="absolute bottom-3 left-3 right-3">
                 <span className={`
                   inline-block px-3 py-1 rounded-full text-xs font-medium
                   ${image.type === 'ladies' 
-                    ? 'bg-sage-100/90 text-sage-700' 
-                    : 'bg-cream-100/90 text-sage-700'
+                    ? 'bg-theme-100/90 text-theme-700' 
+                    : 'bg-white/90 text-theme-700'
                   }
                   backdrop-blur-sm
                 `}>
