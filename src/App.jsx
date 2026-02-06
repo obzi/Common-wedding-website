@@ -459,8 +459,8 @@ function WeddingContent() {
                   src={IMAGES.couple}
                   alt="Couple"
                   className="w-full h-72 md:h-80 object-cover rounded-2xl shadow-lg"
-                  loading="lazy"
                   data-testid="couple-image"
+                  onError={(e) => { e.target.style.display = 'block'; e.target.src = 'https://images.unsplash.com/photo-1529634597503-139d3726fed5?auto=format&fit=crop&w=800&q=80'; }}
                 />
               </div>
             </div>
