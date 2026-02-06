@@ -343,7 +343,7 @@ function HeroSection() {
           className="space-y-4 bg-white/70 backdrop-blur-sm px-8 py-10 rounded-3xl shadow-xl"
         >
           <p className="text-sage-700 tracking-[0.3em] uppercase text-sm md:text-base font-medium">
-            We're Getting Married
+            {config.content.hero.subtitle}
           </p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-sage-800">
             {config.couple.displayName}
