@@ -448,21 +448,14 @@ function WeddingContent() {
         {/* About Section */}
         <Section id="about">
           <SectionCard>
-            <SectionTitle icon={Heart}>Our Story</SectionTitle>
+            <SectionTitle icon={Heart}>{config.content.about.title}</SectionTitle>
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="order-2 md:order-1 space-y-4 text-sage-700">
-                <p>
-                  We're two souls who found each other through a shared love of adventure, 
-                  laughter, and life's beautiful little moments.
-                </p>
-                <p>
-                  After years of creating memories together, we're ready to begin our greatest 
-                  adventure yet — marriage. We couldn't be more excited to share this special 
-                  day with our loved ones.
-                </p>
-                <p className="font-medium text-sage-800">
-                  Thank you for being part of our journey!
-                </p>
+                {config.content.about.paragraphs.map((p, i) => (
+                  <p key={i} className={i === config.content.about.paragraphs.length - 1 ? 'font-medium text-sage-800' : ''}>
+                    {p}
+                  </p>
+                ))}
               </div>
               <div className="order-1 md:order-2">
                 <img
@@ -485,9 +478,9 @@ function WeddingContent() {
               <div className="bg-sage-50 rounded-2xl p-6 text-center">
                 <p className="text-lg text-sage-700 mb-2">Save the Date</p>
                 <p className="text-3xl md:text-4xl font-serif font-semibold text-sage-800">
-                  December 31, 2025
+                  {config.wedding.date}
                 </p>
-                <p className="text-sage-600 mt-2">The Grand Estate • Countryside</p>
+                <p className="text-sage-600 mt-2">{config.wedding.venue.name} • {config.wedding.venue.location}</p>
               </div>
               <img
                 src={IMAGES.venue}
@@ -497,11 +490,10 @@ function WeddingContent() {
                 data-testid="venue-image"
               />
               <p className="text-sage-700">
-                Join us at this beautiful countryside estate, the perfect setting to celebrate 
-                this next chapter with family and friends.
+                {config.wedding.venue.description}
               </p>
               <a
-                href="https://maps.google.com"
+                href={config.links.venueMap}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-800 font-medium transition-colors"
