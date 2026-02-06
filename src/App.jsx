@@ -101,7 +101,7 @@ function SectionTitle({ icon: Icon, children }) {
   return (
     <div className="flex items-center gap-3 mb-6">
       {Icon && (
-        <div className="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center">
+        <div className="w-10 h-10 rounded-full bg-theme-100 flex items-center justify-center">
           <Icon className="w-5 h-5 text-sage-600" />
         </div>
       )}
@@ -225,7 +225,7 @@ function Navigation({ menuOpen, setMenuOpen }) {
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-sage-50/90 backdrop-blur-sm'
+          : 'bg-theme-50/90 backdrop-blur-sm'
       }`}
       data-testid="navigation"
     >
@@ -248,7 +248,7 @@ function Navigation({ menuOpen, setMenuOpen }) {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-sage-100 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-theme-100 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
             data-testid="mobile-menu-btn"
@@ -262,7 +262,7 @@ function Navigation({ menuOpen, setMenuOpen }) {
               <li key={s.id}>
                 <button
                   onClick={() => scrollToSection(s.id)}
-                  className="px-3 py-2 text-sm font-medium text-sage-700 hover:text-sage-900 hover:bg-sage-100 rounded-lg transition-all"
+                  className="px-3 py-2 text-sm font-medium text-sage-700 hover:text-sage-900 hover:bg-theme-100 rounded-lg transition-all"
                   data-testid={`nav-${s.id}`}
                 >
                   {s.label}
@@ -272,7 +272,7 @@ function Navigation({ menuOpen, setMenuOpen }) {
             <li>
               <button
                 onClick={() => scrollToSection('contacts')}
-                className="ml-2 px-4 py-2 text-sm font-medium bg-sage-600 text-white rounded-full hover:bg-sage-700 transition-all"
+                className="ml-2 px-4 py-2 text-sm font-medium bg-theme-600 text-white rounded-full hover:bg-theme-700 transition-all"
                 data-testid="nav-contact-btn"
               >
                 Contact
@@ -295,7 +295,7 @@ function Navigation({ menuOpen, setMenuOpen }) {
                   <li key={s.id}>
                     <button
                       onClick={() => scrollToSection(s.id)}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-sage-700 hover:bg-sage-100 rounded-lg transition-all"
+                      className="w-full flex items-center gap-3 px-4 py-3 text-sage-700 hover:bg-theme-100 rounded-lg transition-all"
                       data-testid={`mobile-nav-${s.id}`}
                     >
                       <s.icon className="w-5 h-5 text-sage-500" />
@@ -476,7 +476,7 @@ function WeddingContent() {
           <SectionCard>
             <SectionTitle icon={MapPin}>Venue & Date</SectionTitle>
             <div className="space-y-6">
-              <div className="bg-sage-50 rounded-2xl p-6 text-center">
+              <div className="bg-theme-50 rounded-2xl p-6 text-center">
                 <p className="text-lg text-sage-700 mb-2">Save the Date</p>
                 <p className="text-3xl md:text-4xl font-serif font-semibold text-sage-800">
                   {config.wedding.date}
@@ -528,7 +528,7 @@ function WeddingContent() {
 
         {/* RSVP Section */}
         <Section id="rsvp">
-          <SectionCard className="bg-sage-50/80">
+          <SectionCard className="bg-theme-50/80">
             <SectionTitle icon={Users}>{config.content.rsvp.title}</SectionTitle>
             <div className="space-y-6">
               <p className="text-sage-700">
@@ -607,7 +607,7 @@ function WeddingContent() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-4 p-4 bg-sage-50 rounded-xl"
+                  className="flex items-center gap-4 p-4 bg-theme-50 rounded-xl"
                   data-testid={`schedule-item-${i}`}
                 >
                   <span className="font-semibold text-sage-800 w-24 flex-shrink-0">{item.time}</span>
@@ -683,7 +683,7 @@ function WeddingContent() {
                 {config.content.contact.description}
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="bg-sage-50 rounded-xl p-4">
+                <div className="bg-theme-50 rounded-xl p-4">
                   <p className="font-semibold text-sage-800 mb-1">{config.couple.partner1.name}</p>
                   <a 
                     href={`tel:${config.couple.partner1.phone.replace(/\s/g, '')}`} 
@@ -693,7 +693,7 @@ function WeddingContent() {
                     {config.couple.partner1.phone}
                   </a>
                 </div>
-                <div className="bg-sage-50 rounded-xl p-4">
+                <div className="bg-theme-50 rounded-xl p-4">
                   <p className="font-semibold text-sage-800 mb-1">{config.couple.partner2.name}</p>
                   <a 
                     href={`tel:${config.couple.partner2.phone.replace(/\s/g, '')}`} 
@@ -710,7 +710,7 @@ function WeddingContent() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-sage-100 py-12 mt-16" data-testid="footer">
+      <footer className="bg-theme-100 py-12 mt-16" data-testid="footer">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h3 className="text-3xl font-serif font-semibold text-sage-800 mb-2">
             {config.couple.displayName}
