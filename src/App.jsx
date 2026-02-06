@@ -102,10 +102,10 @@ function SectionTitle({ icon: Icon, children }) {
     <div className="flex items-center gap-3 mb-6">
       {Icon && (
         <div className="w-10 h-10 rounded-full bg-theme-100 flex items-center justify-center">
-          <Icon className="w-5 h-5 text-sage-600" />
+          <Icon className="w-5 h-5 text-theme-600" />
         </div>
       )}
-      <h2 className="text-2xl md:text-3xl font-serif font-semibold text-sage-800">
+      <h2 className="text-2xl md:text-3xl font-serif font-semibold text-theme-800">
         {children}
       </h2>
     </div>
@@ -161,11 +161,11 @@ function AuthorizationGate({ children }) {
         <Card className="w-full max-w-md" data-testid="auth-card">
           <CardContent className="space-y-6 p-8">
             <div className="text-center">
-              <Heart className="w-12 h-12 text-sage-500 mx-auto mb-4" />
-              <h1 className="text-3xl font-serif font-semibold text-sage-800 mb-2">
+              <Heart className="w-12 h-12 text-theme-500 mx-auto mb-4" />
+              <h1 className="text-3xl font-serif font-semibold text-theme-800 mb-2">
                 Welcome
               </h1>
-              <p className="text-sage-600">
+              <p className="text-theme-600">
                 Please enter the password to access our wedding website.
               </p>
             </div>
@@ -238,10 +238,10 @@ function Navigation({ menuOpen, setMenuOpen }) {
             className="flex flex-col"
             data-testid="logo"
           >
-            <span className="text-lg md:text-xl font-serif font-semibold text-sage-700 leading-tight">
+            <span className="text-lg md:text-xl font-serif font-semibold text-theme-700 leading-tight">
               {config.couple.displayName}
             </span>
-            <span className="text-xs text-sage-500 tracking-widest uppercase">
+            <span className="text-xs text-theme-500 tracking-widest uppercase">
               Wedding Day
             </span>
           </a>
@@ -253,7 +253,7 @@ function Navigation({ menuOpen, setMenuOpen }) {
             aria-label="Toggle menu"
             data-testid="mobile-menu-btn"
           >
-            {menuOpen ? <X className="w-6 h-6 text-sage-700" /> : <Menu className="w-6 h-6 text-sage-700" />}
+            {menuOpen ? <X className="w-6 h-6 text-theme-700" /> : <Menu className="w-6 h-6 text-theme-700" />}
           </button>
 
           {/* Desktop menu */}
@@ -262,7 +262,7 @@ function Navigation({ menuOpen, setMenuOpen }) {
               <li key={s.id}>
                 <button
                   onClick={() => scrollToSection(s.id)}
-                  className="px-3 py-2 text-sm font-medium text-sage-700 hover:text-sage-900 hover:bg-theme-100 rounded-lg transition-all"
+                  className="px-3 py-2 text-sm font-medium text-theme-700 hover:text-theme-900 hover:bg-theme-100 rounded-lg transition-all"
                   data-testid={`nav-${s.id}`}
                 >
                   {s.label}
@@ -295,10 +295,10 @@ function Navigation({ menuOpen, setMenuOpen }) {
                   <li key={s.id}>
                     <button
                       onClick={() => scrollToSection(s.id)}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-sage-700 hover:bg-theme-100 rounded-lg transition-all"
+                      className="w-full flex items-center gap-3 px-4 py-3 text-theme-700 hover:bg-theme-100 rounded-lg transition-all"
                       data-testid={`mobile-nav-${s.id}`}
                     >
-                      <s.icon className="w-5 h-5 text-sage-500" />
+                      <s.icon className="w-5 h-5 text-theme-500" />
                       {s.label}
                     </button>
                   </li>
@@ -343,13 +343,13 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="space-y-4 bg-white/70 backdrop-blur-sm px-8 py-10 rounded-3xl shadow-xl"
         >
-          <p className="text-sage-700 tracking-[0.3em] uppercase text-sm md:text-base font-medium">
+          <p className="text-theme-700 tracking-[0.3em] uppercase text-sm md:text-base font-medium">
             {config.content.hero.subtitle}
           </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-sage-800">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-theme-800">
             {config.couple.displayName}
           </h1>
-          <div className="flex items-center justify-center gap-4 text-sage-700">
+          <div className="flex items-center justify-center gap-4 text-theme-700">
             <span className="w-12 h-px bg-sage-400" />
             <Calendar className="w-5 h-5" />
             <span className="text-lg md:text-xl font-light">{config.wedding.date}</span>
@@ -369,7 +369,7 @@ function HeroSection() {
             aria-label="Scroll down"
             data-testid="scroll-down-btn"
           >
-            <svg className="w-6 h-6 text-sage-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-6 h-6 text-theme-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </button>
@@ -451,9 +451,9 @@ function WeddingContent() {
           <SectionCard>
             <SectionTitle icon={Heart}>{config.content.about.title}</SectionTitle>
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="order-2 md:order-1 space-y-4 text-sage-700">
+              <div className="order-2 md:order-1 space-y-4 text-theme-700">
                 {config.content.about.paragraphs.map((p, i) => (
-                  <p key={i} className={i === config.content.about.paragraphs.length - 1 ? 'font-medium text-sage-800' : ''}>
+                  <p key={i} className={i === config.content.about.paragraphs.length - 1 ? 'font-medium text-theme-800' : ''}>
                     {p}
                   </p>
                 ))}
@@ -477,11 +477,11 @@ function WeddingContent() {
             <SectionTitle icon={MapPin}>Venue & Date</SectionTitle>
             <div className="space-y-6">
               <div className="bg-theme-50 rounded-2xl p-6 text-center">
-                <p className="text-lg text-sage-700 mb-2">Save the Date</p>
-                <p className="text-3xl md:text-4xl font-serif font-semibold text-sage-800">
+                <p className="text-lg text-theme-700 mb-2">Save the Date</p>
+                <p className="text-3xl md:text-4xl font-serif font-semibold text-theme-800">
                   {config.wedding.date}
                 </p>
-                <p className="text-sage-600 mt-2">{config.wedding.venue.name} • {config.wedding.venue.location}</p>
+                <p className="text-theme-600 mt-2">{config.wedding.venue.name} • {config.wedding.venue.location}</p>
               </div>
               <img
                 src={IMAGES.venue}
@@ -490,14 +490,14 @@ function WeddingContent() {
                 loading="lazy"
                 data-testid="venue-image"
               />
-              <p className="text-sage-700">
+              <p className="text-theme-700">
                 {config.wedding.venue.description}
               </p>
               <a
                 href={config.links.venueMap}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-800 font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-theme-600 hover:text-theme-800 font-medium transition-colors"
                 data-testid="venue-map-link"
               >
                 <MapPin className="w-4 h-4" />
@@ -512,7 +512,7 @@ function WeddingContent() {
           <SectionCard>
             <SectionTitle icon={Home}>{config.content.accommodation.title}</SectionTitle>
             <div className="space-y-6">
-              <p className="text-sage-700">
+              <p className="text-theme-700">
                 {config.content.accommodation.description}
               </p>
               <img
@@ -531,7 +531,7 @@ function WeddingContent() {
           <SectionCard className="bg-theme-50/80">
             <SectionTitle icon={Users}>{config.content.rsvp.title}</SectionTitle>
             <div className="space-y-6">
-              <p className="text-sage-700">
+              <p className="text-theme-700">
                 {config.content.rsvp.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -555,21 +555,21 @@ function WeddingContent() {
           <SectionCard>
             <SectionTitle icon={Shirt}>{config.content.dresscode.title}</SectionTitle>
             <div className="space-y-6">
-              <div className="space-y-4 text-sage-700">
+              <div className="space-y-4 text-theme-700">
                 <p>
                   {config.content.dresscode.description}
                 </p>
                 <p>
-                  <strong className="text-sage-800">Ladies:</strong> {config.content.dresscode.ladies}
+                  <strong className="text-theme-800">Ladies:</strong> {config.content.dresscode.ladies}
                 </p>
                 <p>
-                  <strong className="text-sage-800">Gentlemen:</strong> {config.content.dresscode.gentlemen}
+                  <strong className="text-theme-800">Gentlemen:</strong> {config.content.dresscode.gentlemen}
                 </p>
               </div>
 
               {/* Color Palette */}
               <div className="bg-white rounded-2xl shadow-md p-6">
-                <p className="text-sm text-sage-600 mb-4 text-center">Suggested Color Palette</p>
+                <p className="text-sm text-theme-600 mb-4 text-center">Suggested Color Palette</p>
                 <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
                   {themeData.palette.map((item, i) => (
                     <div key={i} className="flex flex-col items-center" data-testid={`color-${i}`}>
@@ -577,7 +577,7 @@ function WeddingContent() {
                         className="w-12 h-12 md:w-14 md:h-14 rounded-full shadow-md border-2 border-white" 
                         style={{ backgroundColor: item.color }}
                       />
-                      <span className="text-xs text-sage-600 mt-2 text-center">{item.name}</span>
+                      <span className="text-xs text-theme-600 mt-2 text-center">{item.name}</span>
                     </div>
                   ))}
                 </div>
@@ -585,7 +585,7 @@ function WeddingContent() {
 
               <Link
                 to="/inspiration"
-                className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-800 font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-theme-600 hover:text-theme-800 font-medium transition-colors"
                 data-testid="inspiration-link"
               >
                 <Camera className="w-4 h-4" />
@@ -610,8 +610,8 @@ function WeddingContent() {
                   className="flex items-center gap-4 p-4 bg-theme-50 rounded-xl"
                   data-testid={`schedule-item-${i}`}
                 >
-                  <span className="font-semibold text-sage-800 w-24 flex-shrink-0">{item.time}</span>
-                  <span className="text-sage-700">{item.event}</span>
+                  <span className="font-semibold text-theme-800 w-24 flex-shrink-0">{item.time}</span>
+                  <span className="text-theme-700">{item.event}</span>
                 </motion.div>
               ))}
             </div>
@@ -623,7 +623,7 @@ function WeddingContent() {
           <SectionCard>
             <SectionTitle icon={Car}>{config.content.parking.title}</SectionTitle>
             <div className="space-y-6">
-              <p className="text-sage-700">
+              <p className="text-theme-700">
                 {config.content.parking.description}
               </p>
               <img
@@ -641,7 +641,7 @@ function WeddingContent() {
         <Section id="photos">
           <SectionCard>
             <SectionTitle icon={Camera}>{config.content.photos.title}</SectionTitle>
-            <div className="space-y-4 text-sage-700">
+            <div className="space-y-4 text-theme-700">
               <p>
                 {config.content.photos.description}
               </p>
@@ -649,7 +649,7 @@ function WeddingContent() {
                 href={config.links.photoAlbum}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-800 font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-theme-600 hover:text-theme-800 font-medium transition-colors"
                 data-testid="photo-share-link"
               >
                 <Camera className="w-4 h-4" />
@@ -663,13 +663,13 @@ function WeddingContent() {
         <Section id="gifts">
           <SectionCard className="text-center">
             <SectionTitle icon={Gift}>{config.content.gifts.title}</SectionTitle>
-            <div className="space-y-4 text-sage-700 max-w-xl mx-auto">
+            <div className="space-y-4 text-theme-700 max-w-xl mx-auto">
               {config.content.gifts.paragraphs.map((p, i) => (
-                <p key={i} className={i === config.content.gifts.paragraphs.length - 1 ? 'font-medium text-sage-800' : ''}>
+                <p key={i} className={i === config.content.gifts.paragraphs.length - 1 ? 'font-medium text-theme-800' : ''}>
                   {p}
                 </p>
               ))}
-              <Heart className="w-8 h-8 text-sage-400 mx-auto mt-4" />
+              <Heart className="w-8 h-8 text-theme-400 mx-auto mt-4" />
             </div>
           </SectionCard>
         </Section>
@@ -678,26 +678,26 @@ function WeddingContent() {
         <Section id="contacts">
           <SectionCard>
             <SectionTitle icon={Phone}>{config.content.contact.title}</SectionTitle>
-            <div className="space-y-4 text-sage-700">
+            <div className="space-y-4 text-theme-700">
               <p>
                 {config.content.contact.description}
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-theme-50 rounded-xl p-4">
-                  <p className="font-semibold text-sage-800 mb-1">{config.couple.partner1.name}</p>
+                  <p className="font-semibold text-theme-800 mb-1">{config.couple.partner1.name}</p>
                   <a 
                     href={`tel:${config.couple.partner1.phone.replace(/\s/g, '')}`} 
-                    className="text-sage-600 hover:text-sage-800 transition-colors"
+                    className="text-theme-600 hover:text-theme-800 transition-colors"
                     data-testid="contact-jane"
                   >
                     {config.couple.partner1.phone}
                   </a>
                 </div>
                 <div className="bg-theme-50 rounded-xl p-4">
-                  <p className="font-semibold text-sage-800 mb-1">{config.couple.partner2.name}</p>
+                  <p className="font-semibold text-theme-800 mb-1">{config.couple.partner2.name}</p>
                   <a 
                     href={`tel:${config.couple.partner2.phone.replace(/\s/g, '')}`} 
-                    className="text-sage-600 hover:text-sage-800 transition-colors"
+                    className="text-theme-600 hover:text-theme-800 transition-colors"
                     data-testid="contact-john"
                   >
                     {config.couple.partner2.phone}
@@ -712,11 +712,11 @@ function WeddingContent() {
       {/* Footer */}
       <footer className="bg-theme-100 py-12 mt-16" data-testid="footer">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h3 className="text-3xl font-serif font-semibold text-sage-800 mb-2">
+          <h3 className="text-3xl font-serif font-semibold text-theme-800 mb-2">
             {config.couple.displayName}
           </h3>
-          <p className="text-sage-600">{config.wedding.date}</p>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sage-500 text-sm">
+          <p className="text-theme-600">{config.wedding.date}</p>
+          <div className="mt-6 flex items-center justify-center gap-2 text-theme-500 text-sm">
             <span>{config.content.footer.tagline}</span>
           </div>
         </div>
