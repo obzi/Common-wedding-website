@@ -1,11 +1,24 @@
-import * as React from "react"
+import React from 'react';
+import { cn } from '../../lib/utils';
 
-export function Card({ className = "", ...props }) {
+export function Card({ className = '', children, ...props }) {
   return (
-    <div className={`rounded-lg border bg-white text-card-foreground shadow-sm ${className}`} {...props} />
-  )
+    <div
+      className={cn(
+        'rounded-2xl bg-white/90 backdrop-blur-sm shadow-lg border border-sage-100',
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  );
 }
 
-export function CardContent({ className = "", ...props }) {
-  return <div className={`p-6 pt-0 ${className}`} {...props} />
+export function CardContent({ className = '', children, ...props }) {
+  return (
+    <div className={cn('p-6', className)} {...props}>
+      {children}
+    </div>
+  );
 }
