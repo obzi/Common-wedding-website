@@ -32,7 +32,7 @@ const outfitImages = [
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1620122830784-c29a955d2fbe?auto=format&fit=crop&w=500&q=80',
+    src: 'https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=500&q=80',
     alt: 'Man formal portrait',
     type: 'gentlemen'
   }
