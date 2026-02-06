@@ -15,19 +15,19 @@ describe('UI Components', () => {
     it('applies primary variant by default', () => {
       render(<Button>Primary</Button>);
       const button = screen.getByText('Primary');
-      expect(button).toHaveClass('bg-sage-600');
+      expect(button).toHaveClass('bg-theme-600');
     });
 
     it('applies secondary variant', () => {
       render(<Button variant="secondary">Secondary</Button>);
       const button = screen.getByText('Secondary');
-      expect(button).toHaveClass('bg-cream-100');
+      expect(button).toHaveClass('bg-theme-100');
     });
 
     it('applies outline variant', () => {
       render(<Button variant="outline">Outline</Button>);
       const button = screen.getByText('Outline');
-      expect(button).toHaveClass('border-sage-400');
+      expect(button).toHaveClass('border-theme-400');
     });
 
     it('applies different sizes', () => {
