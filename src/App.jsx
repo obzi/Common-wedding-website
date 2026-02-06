@@ -439,6 +439,11 @@ function WeddingContent() {
   const [currentTheme, setCurrentTheme] = useState(config.theme);
   const themeData = getTheme(currentTheme);
 
+  // Apply theme colors when theme changes
+  useEffect(() => {
+    applyThemeColors(themeData);
+  }, [themeData]);
+
   return (
     <div className="min-h-screen bg-cream-50">
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
