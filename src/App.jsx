@@ -346,12 +346,12 @@ function HeroSection() {
             We're Getting Married
           </p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-sage-800">
-            Jane & John
+            {config.couple.displayName}
           </h1>
           <div className="flex items-center justify-center gap-4 text-sage-700">
             <span className="w-12 h-px bg-sage-400" />
             <Calendar className="w-5 h-5" />
-            <span className="text-lg md:text-xl font-light">December 31, 2025</span>
+            <span className="text-lg md:text-xl font-light">{config.wedding.date}</span>
             <span className="w-12 h-px bg-sage-400" />
           </div>
         </motion.div>
