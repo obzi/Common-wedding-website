@@ -514,7 +514,6 @@ function WeddingContent() {
                 src={IMAGES.accommodation}
                 alt="Accommodation"
                 className="w-full h-64 md:h-72 object-cover rounded-2xl shadow-lg"
-                loading="lazy"
                 data-testid="accommodation-image"
               />
             </div>
