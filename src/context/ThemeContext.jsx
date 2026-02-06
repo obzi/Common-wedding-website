@@ -11,18 +11,7 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     const theme = getTheme(currentTheme);
     setThemeData(theme);
-    
-    // Update CSS variables dynamically
-    const root = document.documentElement;
-    const { colors } = theme;
-    
-    Object.entries(colors.primary).forEach(([shade, value]) => {
-      root.style.setProperty(`--color-primary-${shade}`, value);
-    });
-    
-    root.style.setProperty('--color-accent-light', colors.accent.light);
-    root.style.setProperty('--color-accent-medium', colors.accent.medium);
-    root.style.setProperty('--color-accent-dark', colors.accent.dark);
+    applyThemeColors(theme);
   }, [currentTheme]);
 
   const changeTheme = (themeName) => {
@@ -41,6 +30,22 @@ export function ThemeProvider({ children }) {
       {children}
     </ThemeContext.Provider>
   );
+}
+
+// Apply theme colors to CSS variables
+export function applyThemeColors(theme) {
+  const root = document.documentElement;
+  const { colors } = theme;
+  
+  // Set primary colors
+  Object.entries(colors.primary).forEach(([shade, value]) => {
+    root.style.setProperty(`--color-primary-${shade}`, value);
+  });
+  
+  // Set accent colors
+  root.style.setProperty('--color-accent-light', colors.accent.light);
+  root.style.setProperty('--color-accent-medium', colors.accent.medium);
+  root.style.setProperty('--color-accent-dark', colors.accent.dark);
 }
 
 export function useTheme() {
