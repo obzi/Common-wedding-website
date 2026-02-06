@@ -3,22 +3,18 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, MapPin, Phone, Heart, Calendar, 
-  Camera, Gift, Car, Home, Users, Clock, Shirt
+  Camera, Gift, Car, Home, Users, Clock, Shirt, Palette
 } from 'lucide-react';
 import { Card, CardContent } from './components/ui/card';
 import { Input } from './components/ui/input';
 import { Button } from './components/ui/button';
 import Inspiration from './Inspiration';
+import { weddingConfig } from './config/wedding.config';
+import { getTheme, themes } from './config/themes';
 
-// Image URLs from Unsplash (free license)
-const IMAGES = {
-  hero: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80',
-  couple: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80',
-  venue: 'https://images.unsplash.com/photo-1674924258890-f4a5d99bb28c?w=800&q=80',
-  accommodation: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
-  parking: 'https://images.unsplash.com/photo-1621447578052-cd681fbac80c?w=800&q=80',
-  flowers: 'https://images.unsplash.com/photo-1767552659473-9a541393de94?w=1920&q=80'
-};
+// Get configuration
+const config = weddingConfig;
+const IMAGES = config.images;
 
 const sections = [
   { id: 'about', label: 'Our Story', icon: Heart },
@@ -34,7 +30,7 @@ const sections = [
 ];
 
 const PASSWORD_KEY = 'wedding_auth';
-const CORRECT_PASSWORD = 'wedding25';
+const CORRECT_PASSWORD = config.auth.password;
 
 // Animation variants
 const fadeInUp = {
