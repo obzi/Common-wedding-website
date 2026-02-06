@@ -620,11 +620,10 @@ function WeddingContent() {
         {/* Parking Section */}
         <Section id="parking">
           <SectionCard>
-            <SectionTitle icon={Car}>Parking</SectionTitle>
+            <SectionTitle icon={Car}>{config.content.parking.title}</SectionTitle>
             <div className="space-y-6">
               <p className="text-sage-700">
-                Plenty of parking is available right at the venue. There's a large meadow 
-                with space for all guests' vehicles, and additional parking along the road.
+                {config.content.parking.description}
               </p>
               <img
                 src={IMAGES.parking}
@@ -640,22 +639,20 @@ function WeddingContent() {
         {/* Photos Section */}
         <Section id="photos">
           <SectionCard>
-            <SectionTitle icon={Camera}>Share Your Photos</SectionTitle>
+            <SectionTitle icon={Camera}>{config.content.photos.title}</SectionTitle>
             <div className="space-y-4 text-sage-700">
               <p>
-                While our photographer will capture the day beautifully, we'd love to see 
-                your candid moments too! Share your photos and videos — in return, we'll 
-                share the official album with you.
+                {config.content.photos.description}
               </p>
               <a
-                href="https://drive.google.com"
+                href={config.links.photoAlbum}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-800 font-medium transition-colors"
                 data-testid="photo-share-link"
               >
                 <Camera className="w-4 h-4" />
-                Upload to Shared Album
+                {config.content.photos.linkText}
               </a>
             </div>
           </SectionCard>
@@ -664,18 +661,13 @@ function WeddingContent() {
         {/* Gifts Section */}
         <Section id="gifts">
           <SectionCard className="text-center">
-            <SectionTitle icon={Gift}>Gifts</SectionTitle>
+            <SectionTitle icon={Gift}>{config.content.gifts.title}</SectionTitle>
             <div className="space-y-4 text-sage-700 max-w-xl mx-auto">
-              <p>
-                Your presence at our wedding is the greatest gift of all.
-              </p>
-              <p>
-                If you'd like to give a gift, we would be grateful for a contribution 
-                toward our new home or honeymoon adventure.
-              </p>
-              <p className="font-medium text-sage-800">
-                Thank you for being part of our story!
-              </p>
+              {config.content.gifts.paragraphs.map((p, i) => (
+                <p key={i} className={i === config.content.gifts.paragraphs.length - 1 ? 'font-medium text-sage-800' : ''}>
+                  {p}
+                </p>
+              ))}
               <Heart className="w-8 h-8 text-sage-400 mx-auto mt-4" />
             </div>
           </SectionCard>
@@ -684,20 +676,20 @@ function WeddingContent() {
         {/* Contacts Section */}
         <Section id="contacts">
           <SectionCard>
-            <SectionTitle icon={Phone}>Contact Us</SectionTitle>
+            <SectionTitle icon={Phone}>{config.content.contact.title}</SectionTitle>
             <div className="space-y-4 text-sage-700">
               <p>
-                Have a question? Need clarification on anything? Don't hesitate to reach out!
+                {config.content.contact.description}
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-sage-50 rounded-xl p-4">
-                  <p className="font-semibold text-sage-800 mb-1">Jane</p>
+                  <p className="font-semibold text-sage-800 mb-1">{config.couple.partner1.name}</p>
                   <a 
-                    href="tel:+1234567890" 
+                    href={`tel:${config.couple.partner1.phone.replace(/\s/g, '')}`} 
                     className="text-sage-600 hover:text-sage-800 transition-colors"
                     data-testid="contact-jane"
                   >
-                    +1 (234) 567-890
+                    {config.couple.partner1.phone}
                   </a>
                 </div>
                 <div className="bg-sage-50 rounded-xl p-4">
