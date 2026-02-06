@@ -188,7 +188,11 @@ export default function Inspiration() {
 
         {/* Back Button */}
         <div className="text-center mt-12">
-          <Link to="/" data-testid="back-to-wedding-btn">
+          <Link 
+            to="/#" 
+            data-testid="back-to-wedding-btn"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <Button size="lg" variant="primary">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Wedding
