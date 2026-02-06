@@ -693,13 +693,13 @@ function WeddingContent() {
                   </a>
                 </div>
                 <div className="bg-sage-50 rounded-xl p-4">
-                  <p className="font-semibold text-sage-800 mb-1">John</p>
+                  <p className="font-semibold text-sage-800 mb-1">{config.couple.partner2.name}</p>
                   <a 
-                    href="tel:+1234567891" 
+                    href={`tel:${config.couple.partner2.phone.replace(/\s/g, '')}`} 
                     className="text-sage-600 hover:text-sage-800 transition-colors"
                     data-testid="contact-john"
                   >
-                    +1 (234) 567-891
+                    {config.couple.partner2.phone}
                   </a>
                 </div>
               </div>
@@ -712,13 +712,11 @@ function WeddingContent() {
       <footer className="bg-sage-100 py-12 mt-16" data-testid="footer">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h3 className="text-3xl font-serif font-semibold text-sage-800 mb-2">
-            Jane & John
+            {config.couple.displayName}
           </h3>
-          <p className="text-sage-600">December 31, 2025</p>
+          <p className="text-sage-600">{config.wedding.date}</p>
           <div className="mt-6 flex items-center justify-center gap-2 text-sage-500 text-sm">
-            <span>Made with</span>
-            <Heart className="w-4 h-4 text-sage-400" fill="currentColor" />
-            <span>for our special day</span>
+            <span>{config.content.footer.tagline}</span>
           </div>
         </div>
       </footer>
@@ -732,9 +730,13 @@ export default function App() {
       <Route
         path="/*"
         element={
-          <AuthorizationGate>
+          config.auth.enabled ? (
+            <AuthorizationGate>
+              <WeddingContent />
+            </AuthorizationGate>
+          ) : (
             <WeddingContent />
-          </AuthorizationGate>
+          )
         }
       />
       <Route path="/inspiration" element={<Inspiration />} />
