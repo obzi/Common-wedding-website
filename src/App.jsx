@@ -483,7 +483,6 @@ function WeddingContent() {
                 src={IMAGES.venue}
                 alt="Wedding venue"
                 className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
-                loading="lazy"
                 data-testid="venue-image"
               />
               <p className="text-theme-700">
