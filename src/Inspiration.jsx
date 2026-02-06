@@ -4,36 +4,36 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Heart } from 'lucide-react';
 import { Button } from './components/ui/button';
 
-// Free license images from Unsplash
+// Free license images from Unsplash - Wedding guest outfit inspiration
 const outfitImages = [
   {
-    src: 'https://images.unsplash.com/photo-1594463750939-ebb28c3f7f75?auto=format&fit=crop&w=500&q=80',
+    src: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=500&q=80',
     alt: 'Woman in elegant dress',
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80',
+    src: 'https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=500&q=80',
     alt: 'Man in elegant suit',
     type: 'gentlemen'
   },
   {
-    src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&q=80',
+    src: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=500&q=80',
     alt: 'Woman in flowing dress',
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80',
+    src: 'https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?auto=format&fit=crop&w=500&q=80',
     alt: 'Man in casual elegant attire',
     type: 'gentlemen'
   },
   {
-    src: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80',
+    src: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=500&q=80',
     alt: 'Woman fashion portrait',
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80',
-    alt: 'Man portrait',
+    src: 'https://images.unsplash.com/photo-1620122830784-c29a955d2fbe?auto=format&fit=crop&w=500&q=80',
+    alt: 'Man formal portrait',
     type: 'gentlemen'
   }
 ];
