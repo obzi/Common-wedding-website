@@ -32,9 +32,9 @@ const outfitImages = [
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=500&q=80',
-    alt: 'Man in formal shirt',
-    type: 'gentlemen'
+    src: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80',
+    alt: 'Woman portrait elegant',
+    type: 'ladies'
   }
 ];
 
