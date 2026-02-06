@@ -509,12 +509,10 @@ function WeddingContent() {
         {/* Accommodation Section */}
         <Section id="accommodation">
           <SectionCard>
-            <SectionTitle icon={Home}>Accommodation</SectionTitle>
+            <SectionTitle icon={Home}>{config.content.accommodation.title}</SectionTitle>
             <div className="space-y-6">
               <p className="text-sage-700">
-                For guests wishing to stay overnight, we've arranged comfortable accommodation 
-                close to the venue. Feel free to contact us for details or to reserve a room — 
-                we'll be happy to help!
+                {config.content.accommodation.description}
               </p>
               <img
                 src={IMAGES.accommodation}
@@ -530,22 +528,20 @@ function WeddingContent() {
         {/* RSVP Section */}
         <Section id="rsvp">
           <SectionCard className="bg-sage-50/80">
-            <SectionTitle icon={Users}>RSVP</SectionTitle>
+            <SectionTitle icon={Users}>{config.content.rsvp.title}</SectionTitle>
             <div className="space-y-6">
               <p className="text-sage-700">
-                Please take a moment to let us know if you'll be joining the celebration. 
-                Your response helps us prepare everything for your comfort — we can't wait 
-                to hear from you!
+                {config.content.rsvp.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://forms.google.com"
+                  href={config.links.rsvpForm}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="rsvp-link"
                 >
                   <Button size="lg">
-                    Fill Out RSVP Form
+                    {config.content.rsvp.buttonText}
                   </Button>
                 </a>
               </div>
@@ -556,16 +552,14 @@ function WeddingContent() {
         {/* Dresscode Section */}
         <Section id="dresscode">
           <SectionCard>
-            <SectionTitle icon={Shirt}>Dress Code</SectionTitle>
+            <SectionTitle icon={Shirt}>{config.content.dresscode.title}</SectionTitle>
             <div className="space-y-6">
               <div className="space-y-4 text-sage-700">
                 <p>
-                  Our wedding will blend casual elegance with a relaxed atmosphere. We'd love 
-                  it if you'd match your outfit to our earthy, natural color palette.
+                  {config.content.dresscode.description}
                 </p>
                 <p>
-                  <strong className="text-sage-800">Ladies:</strong> Flowing dresses, skirts, or 
-                  smart trousers in sage greens, creams, or soft earth tones.
+                  <strong className="text-sage-800">Ladies:</strong> {config.content.dresscode.ladies}
                 </p>
                 <p>
                   <strong className="text-sage-800">Gentlemen:</strong> Light shirts in green or 
