@@ -8,13 +8,13 @@ export function Button({
   className = '', 
   ...props 
 }) {
-  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-full';
+  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-full';
   
   const variants = {
-    primary: 'bg-sage-600 text-white hover:bg-sage-700 active:bg-sage-800 shadow-md hover:shadow-lg',
-    secondary: 'bg-cream-100 text-sage-800 hover:bg-cream-200 border border-sage-200',
-    outline: 'border-2 border-sage-400 text-sage-700 hover:bg-sage-50',
-    ghost: 'text-sage-700 hover:bg-sage-100'
+    primary: 'bg-theme-600 text-white hover:bg-theme-700 active:bg-theme-800 shadow-md hover:shadow-lg',
+    secondary: 'bg-theme-100 text-theme-800 hover:bg-theme-200 border border-theme-200',
+    outline: 'border-2 border-theme-400 text-theme-700 hover:bg-theme-50',
+    ghost: 'text-theme-700 hover:bg-theme-100'
   };
   
   const sizes = {
