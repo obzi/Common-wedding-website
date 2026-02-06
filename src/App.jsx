@@ -378,24 +378,71 @@ function HeroSection() {
   );
 }
 
-// Color palette for dresscode
-const colorPalette = [
-  { name: 'Light Sage', color: '#d6dccb' },
-  { name: 'Sage', color: '#9aab7f' },
-  { name: 'Deep Sage', color: '#65774d' },
-  { name: 'Cream', color: '#faf3e6' },
-  { name: 'Warm Beige', color: '#e5c9a8' },
-  { name: 'Soft Gold', color: '#c9a962' }
-];
+// Get color palette from current theme
+const getCurrentTheme = () => getTheme(config.theme);
+
+// Theme Selector Component
+function ThemeSelector({ currentTheme, onThemeChange }) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <div className="fixed bottom-6 right-6 z-50">
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.9 }}
+            className="absolute bottom-16 right-0 bg-white rounded-2xl shadow-2xl border border-gray-200 p-4 min-w-[200px]"
+          >
+            <p className="text-sm font-medium text-gray-600 mb-3">Choose Theme</p>
+            <div className="space-y-2">
+              {Object.entries(themes).map(([key, theme]) => (
+                <button
+                  key={key}
+                  onClick={() => { onThemeChange(key); setIsOpen(false); }}
+                  className={`w-full flex items-center gap-3 p-2 rounded-xl transition-all ${
+                    currentTheme === key ? 'bg-gray-100' : 'hover:bg-gray-50'
+                  }`}
+                  data-testid={`theme-${key}`}
+                >
+                  <div 
+                    className="w-6 h-6 rounded-full border-2 border-white shadow"
+                    style={{ backgroundColor: theme.colors.primary[500] }}
+                  />
+                  <span className="text-sm font-medium text-gray-700">{theme.name}</span>
+                  {currentTheme === key && (
+                    <span className="ml-auto text-xs text-gray-500">✓</span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-14 h-14 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center hover:shadow-xl transition-all"
+        aria-label="Change theme"
+        data-testid="theme-selector-btn"
+      >
+        <Palette className="w-6 h-6 text-gray-600" />
+      </button>
+    </div>
+  );
+}
 
 // Main content
 function WeddingContent() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState(config.theme);
+  const themeData = getTheme(currentTheme);
 
   return (
     <div className="min-h-screen bg-cream-50">
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <HeroSection />
+      <ThemeSelector currentTheme={currentTheme} onThemeChange={setCurrentTheme} />
       
       <main className="max-w-4xl mx-auto px-4 py-12 space-y-16 md:space-y-24">
         {/* About Section */}
