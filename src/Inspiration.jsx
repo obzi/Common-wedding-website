@@ -32,7 +32,7 @@ const outfitImages = [
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1480429370612-2b33d0621096?auto=format&fit=crop&w=500&q=80',
+    src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=80',
     alt: 'Man in casual elegant shirt',
     type: 'gentlemen'
   }
