@@ -336,7 +336,7 @@ function HeroSection() {
           willChange: 'transform'
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white" />
       
       {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
@@ -344,15 +344,15 @@ function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-4"
+          className="space-y-4 bg-white/70 backdrop-blur-sm px-8 py-10 rounded-3xl shadow-xl"
         >
-          <p className="text-sage-600 tracking-[0.3em] uppercase text-sm md:text-base font-medium">
+          <p className="text-sage-700 tracking-[0.3em] uppercase text-sm md:text-base font-medium">
             We're Getting Married
           </p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-sage-800">
             Jane & John
           </h1>
-          <div className="flex items-center justify-center gap-4 text-sage-600">
+          <div className="flex items-center justify-center gap-4 text-sage-700">
             <span className="w-12 h-px bg-sage-400" />
             <Calendar className="w-5 h-5" />
             <span className="text-lg md:text-xl font-light">December 31, 2025</span>
