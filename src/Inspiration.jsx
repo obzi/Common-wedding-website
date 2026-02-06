@@ -7,33 +7,33 @@ import { Button } from './components/ui/button';
 // Free license images from Unsplash
 const outfitImages = [
   {
-    src: 'https://images.unsplash.com/photo-1617880828721-a507efe5e27f?w=500&q=80',
-    alt: 'Woman in sage dress',
+    src: 'https://images.unsplash.com/photo-1594463750939-ebb28c3f7f75?auto=format&fit=crop&w=500&q=80',
+    alt: 'Woman in elegant dress',
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1529635229076-82fefed713c4?w=500&q=80',
+    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80',
     alt: 'Man in elegant suit',
     type: 'gentlemen'
   },
   {
-    src: 'https://images.unsplash.com/photo-1700462247101-76451f07191b?w=500&q=80',
-    alt: 'Woman in blue dress',
+    src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&q=80',
+    alt: 'Woman in flowing dress',
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1656367924249-321cc26c0f02?w=500&q=80',
+    src: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80',
     alt: 'Man in casual elegant attire',
     type: 'gentlemen'
   },
   {
-    src: 'https://images.unsplash.com/photo-1687156572207-b6649b806b41?w=500&q=80',
-    alt: 'Wedding guests in green',
+    src: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80',
+    alt: 'Woman fashion portrait',
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1667846068421-0a3d8a57506d?w=500&q=80',
-    alt: 'Man in formal wear',
+    src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80',
+    alt: 'Man portrait',
     type: 'gentlemen'
   }
 ];
