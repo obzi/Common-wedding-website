@@ -54,12 +54,12 @@ export const weddingConfig = {
   // IMAGES (Unsplash URLs or local paths)
   // ============================================
   images: {
-    hero: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80',
-    couple: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80',
-    venue: 'https://images.unsplash.com/photo-1674924258890-f4a5d99bb28c?w=800&q=80',
-    accommodation: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
-    parking: 'https://images.unsplash.com/photo-1621447578052-cd681fbac80c?w=800&q=80',
-    flowers: 'https://images.unsplash.com/photo-1767552659473-9a541393de94?w=1920&q=80'
+    hero: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80',
+    couple: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80',
+    venue: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80',
+    accommodation: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
+    parking: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80',
+    flowers: 'https://images.unsplash.com/photo-1561128290-005859246e58?auto=format&fit=crop&w=1920&q=80'
   },
 
   // ============================================
