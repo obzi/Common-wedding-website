@@ -90,7 +90,7 @@ function Section({ id, children, className = '' }) {
 // Section Card component
 function SectionCard({ children, className = '' }) {
   return (
-    <div className={`bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-sage-100 p-6 md:p-8 ${className}`}>
+    <div className={`bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-theme-100 p-6 md:p-8 ${className}`}>
       {children}
     </div>
   );
@@ -288,7 +288,7 @@ function Navigation({ menuOpen, setMenuOpen }) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden border-t border-sage-200"
+              className="md:hidden overflow-hidden border-t border-theme-200"
             >
               <ul className="py-4 space-y-1">
                 {sections.map((s) => (
