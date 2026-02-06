@@ -60,9 +60,10 @@ export default function Inspiration() {
       <header className="bg-white/90 backdrop-blur-sm border-b border-sage-100 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link 
-            to="/" 
+            to="/#" 
             className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-800 transition-colors"
             data-testid="back-link"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <ArrowLeft className="w-5 h-5" />
             <span className="font-medium">Back to Wedding</span>
