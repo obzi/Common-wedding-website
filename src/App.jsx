@@ -11,6 +11,7 @@ import { Button } from './components/ui/button';
 import Inspiration from './Inspiration';
 import { weddingConfig } from './config/wedding.config';
 import { getTheme, themes } from './config/themes';
+import { applyThemeColors } from './context/ThemeContext';
 
 // Get configuration
 const config = weddingConfig;
