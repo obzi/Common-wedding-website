@@ -238,7 +238,7 @@ function Navigation({ menuOpen, setMenuOpen }) {
             data-testid="logo"
           >
             <span className="text-lg md:text-xl font-serif font-semibold text-sage-700 leading-tight">
-              Jane & John
+              {config.couple.displayName}
             </span>
             <span className="text-xs text-sage-500 tracking-widest uppercase">
               Wedding Day
