@@ -624,7 +624,6 @@ function WeddingContent() {
                 src={IMAGES.parking}
                 alt="Parking area"
                 className="w-full h-64 md:h-72 object-cover rounded-2xl shadow-lg"
-                loading="lazy"
                 data-testid="parking-image"
               />
             </div>
