@@ -562,9 +562,7 @@ function WeddingContent() {
                   <strong className="text-sage-800">Ladies:</strong> {config.content.dresscode.ladies}
                 </p>
                 <p>
-                  <strong className="text-sage-800">Gentlemen:</strong> Light shirts in green or 
-                  neutral tones. Trousers in beige, brown, or black. A vest or blazer is optional — 
-                  comfort is key!
+                  <strong className="text-sage-800">Gentlemen:</strong> {config.content.dresscode.gentlemen}
                 </p>
               </div>
 
@@ -572,7 +570,7 @@ function WeddingContent() {
               <div className="bg-white rounded-2xl shadow-md p-6">
                 <p className="text-sm text-sage-600 mb-4 text-center">Suggested Color Palette</p>
                 <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-                  {colorPalette.map((item, i) => (
+                  {themeData.palette.map((item, i) => (
                     <div key={i} className="flex flex-col items-center" data-testid={`color-${i}`}>
                       <div 
                         className="w-12 h-12 md:w-14 md:h-14 rounded-full shadow-md border-2 border-white" 
@@ -601,16 +599,7 @@ function WeddingContent() {
           <SectionCard>
             <SectionTitle icon={Clock}>Schedule</SectionTitle>
             <div className="space-y-4">
-              {[
-                { time: '11:00 AM', event: 'Guest Arrival & Welcome Drinks' },
-                { time: '12:00 PM', event: 'Wedding Ceremony' },
-                { time: '1:00 PM', event: 'Lunch & Toasts' },
-                { time: '2:30 PM', event: 'Photos with the Newlyweds' },
-                { time: '4:00 PM', event: 'Afternoon Tea & Games' },
-                { time: '6:00 PM', event: 'Dinner Reception' },
-                { time: '8:00 PM', event: 'First Dance & Cake Cutting' },
-                { time: '9:00 PM', event: 'Dancing & Celebration' }
-              ].map((item, i) => (
+              {config.schedule.map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
