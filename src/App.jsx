@@ -258,26 +258,17 @@ function Navigation({ menuOpen, setMenuOpen }) {
 
           {/* Desktop menu */}
           <ul className="hidden md:flex items-center gap-1">
-            {sections.slice(0, 6).map((s) => (
+            {sections.map((s) => (
               <li key={s.id}>
                 <button
                   onClick={() => scrollToSection(s.id)}
-                  className="px-3 py-2 text-sm font-medium text-theme-700 hover:text-theme-900 hover:bg-theme-100 rounded-lg transition-all"
+                  className="px-2.5 py-2 text-sm font-medium text-theme-700 hover:text-theme-900 hover:bg-theme-100 rounded-lg transition-all"
                   data-testid={`nav-${s.id}`}
                 >
                   {s.label}
                 </button>
               </li>
             ))}
-            <li>
-              <button
-                onClick={() => scrollToSection('contacts')}
-                className="ml-2 px-4 py-2 text-sm font-medium bg-theme-600 text-white rounded-full hover:bg-theme-700 transition-all"
-                data-testid="nav-contact-btn"
-              >
-                Contact
-              </button>
-            </li>
           </ul>
         </div>
 
