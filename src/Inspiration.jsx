@@ -8,22 +8,22 @@ import { Button } from './components/ui/button';
 const outfitImages = [
   {
     src: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=500&q=80',
-    alt: 'Woman in elegant dress',
+    alt: 'Woman in elegant red dress',
     type: 'ladies'
   },
   {
     src: 'https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=500&q=80',
-    alt: 'Man in elegant suit',
+    alt: 'Man in elegant blue suit',
     type: 'gentlemen'
   },
   {
     src: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=500&q=80',
-    alt: 'Woman in flowing dress',
+    alt: 'Woman in flowing purple dress',
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?auto=format&fit=crop&w=500&q=80',
-    alt: 'Man in casual elegant attire',
+    src: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80',
+    alt: 'Man in business suit',
     type: 'gentlemen'
   },
   {
@@ -32,9 +32,9 @@ const outfitImages = [
     type: 'ladies'
   },
   {
-    src: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80',
-    alt: 'Woman portrait elegant',
-    type: 'ladies'
+    src: 'https://images.unsplash.com/photo-1480429370612-2b33d0621096?auto=format&fit=crop&w=500&q=80',
+    alt: 'Man in casual elegant shirt',
+    type: 'gentlemen'
   }
 ];
 
@@ -55,20 +55,20 @@ const itemVariants = {
 
 export default function Inspiration() {
   return (
-    <div className="min-h-screen bg-cream-50" data-testid="inspiration-page">
+    <div className="min-h-screen bg-theme-50" data-testid="inspiration-page">
       {/* Header */}
-      <header className="bg-white/90 backdrop-blur-sm border-b border-sage-100 sticky top-0 z-50">
+      <header className="bg-white/90 backdrop-blur-sm border-b border-theme-100 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link 
             to="/#" 
-            className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-800 transition-colors"
+            className="inline-flex items-center gap-2 text-theme-600 hover:text-theme-800 transition-colors"
             data-testid="back-link"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <ArrowLeft className="w-5 h-5" />
             <span className="font-medium">Back to Wedding</span>
           </Link>
-          <Heart className="w-5 h-5 text-sage-400" />
+          <Heart className="w-5 h-5 text-theme-400" />
         </div>
       </header>
 
@@ -80,10 +80,10 @@ export default function Inspiration() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h1 className="text-3xl md:text-4xl font-serif font-semibold text-sage-800 mb-4">
+          <h1 className="text-3xl md:text-4xl font-serif font-semibold text-theme-800 mb-4">
             Outfit Inspiration
           </h1>
-          <p className="text-sage-600 max-w-xl mx-auto">
+          <p className="text-theme-600 max-w-xl mx-auto">
             Get inspired for our special day! We love soft, natural tones that complement 
             the earthy, romantic atmosphere of our celebration.
           </p>
@@ -96,7 +96,7 @@ export default function Inspiration() {
           transition={{ delay: 0.3 }}
           className="bg-white rounded-2xl shadow-lg p-6 mb-12"
         >
-          <p className="text-sm text-sage-600 mb-4 text-center font-medium">
+          <p className="text-sm text-theme-600 mb-4 text-center font-medium">
             Suggested Colors
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -112,7 +112,7 @@ export default function Inspiration() {
                   className="w-10 h-10 rounded-full shadow border-2 border-white" 
                   style={{ backgroundColor: item.color }}
                 />
-                <span className="text-xs text-sage-600 mt-1">{item.name}</span>
+                <span className="text-xs text-theme-600 mt-1">{item.name}</span>
               </div>
             ))}
           </div>
@@ -160,26 +160,26 @@ export default function Inspiration() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="mt-12 bg-sage-50 rounded-2xl p-6 md:p-8"
+          className="mt-12 bg-theme-50 rounded-2xl p-6 md:p-8 border border-theme-200"
         >
-          <h2 className="text-xl font-serif font-semibold text-sage-800 mb-4">
+          <h2 className="text-xl font-serif font-semibold text-theme-800 mb-4">
             Helpful Tips
           </h2>
-          <ul className="space-y-3 text-sage-700">
+          <ul className="space-y-3 text-theme-700">
             <li className="flex items-start gap-3">
-              <span className="text-sage-400">•</span>
+              <span className="text-theme-400">•</span>
               <span>Avoid bright white or black — opt for softer, natural tones.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-sage-400">•</span>
+              <span className="text-theme-400">•</span>
               <span>Comfortable shoes are a must — we'll be celebrating on grass and in a barn.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-sage-400">•</span>
+              <span className="text-theme-400">•</span>
               <span>Bring a light layer for the evening — it can get cool after sunset.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-sage-400">•</span>
+              <span className="text-theme-400">•</span>
               <span>Feel free to add personal touches — accessories, flowers, or a fun hat!</span>
             </li>
           </ul>
@@ -201,9 +201,9 @@ export default function Inspiration() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-sage-100 py-8 mt-16">
+      <footer className="bg-theme-100 py-8 mt-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-sage-600 text-sm">
+          <p className="text-theme-600 text-sm">
             Jane & John • December 31, 2025
           </p>
         </div>
