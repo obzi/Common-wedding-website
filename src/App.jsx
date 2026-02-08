@@ -217,9 +217,9 @@ function Navigation({ menuOpen, setMenuOpen }) {
       const el = document.getElementById(id);
       if (el) {
         // Different offset for mobile vs desktop
-        // Mobile: h-16 = 64px, Desktop: h-20 = 80px
+        // Mobile: h-16 = 64px + small padding, Desktop: h-20 = 80px + small padding
         const isMobile = window.innerWidth < 768;
-        const headerOffset = isMobile ? 70 : 85;
+        const headerOffset = isMobile ? 20 : 85;
         const elementPosition = el.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         
