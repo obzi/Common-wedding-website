@@ -218,9 +218,9 @@ function Navigation({ menuOpen, setMenuOpen }) {
       if (el) {
         // Get the actual header height dynamically
         const isMobile = window.innerWidth < 768;
-        // Need larger offset on mobile to show section title
-        // Section has padding-top in the card
-        const headerOffset = isMobile ? 130 : 95;
+        // Offset to show the card edge with breathing room above
+        // Mobile: need more offset, Desktop: slightly less
+        const headerOffset = isMobile ? 160 : 110;
         
         // Get element's position relative to document top
         const rect = el.getBoundingClientRect();
