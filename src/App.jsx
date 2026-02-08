@@ -80,7 +80,7 @@ function Section({ id, children, className = '' }) {
       initial="hidden"
       animate={isVisible ? 'visible' : 'hidden'}
       variants={fadeInUp}
-      className={`scroll-mt-24 ${className}`}
+      className={`${className}`}
     >
       {children}
     </motion.section>
