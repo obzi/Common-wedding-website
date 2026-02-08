@@ -216,7 +216,10 @@ function Navigation({ menuOpen, setMenuOpen }) {
     setTimeout(() => {
       const el = document.getElementById(id);
       if (el) {
-        const headerOffset = 90; // Account for sticky header
+        // Different offset for mobile vs desktop
+        // Mobile: h-16 = 64px, Desktop: h-20 = 80px
+        const isMobile = window.innerWidth < 768;
+        const headerOffset = isMobile ? 70 : 85;
         const elementPosition = el.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         
@@ -226,7 +229,7 @@ function Navigation({ menuOpen, setMenuOpen }) {
         });
         history.replaceState(null, '', `#${id}`);
       }
-    }, 100);
+    }, 150);
   };
 
   return (
