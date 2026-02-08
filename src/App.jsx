@@ -216,20 +216,24 @@ function Navigation({ menuOpen, setMenuOpen }) {
     setTimeout(() => {
       const el = document.getElementById(id);
       if (el) {
-        // Different offset for mobile vs desktop
-        // Mobile: h-16 = 64px + small padding, Desktop: h-20 = 80px + small padding
+        // Get the actual header height dynamically
         const isMobile = window.innerWidth < 768;
-        const headerOffset = isMobile ? 20 : 85;
-        const elementPosition = el.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        // Mobile header: h-16 = 64px, Desktop: h-20 = 80px
+        // Add small buffer for visual spacing
+        const headerOffset = isMobile ? 75 : 90;
+        
+        // Get element's position relative to document top
+        const rect = el.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const targetPosition = rect.top + scrollTop - headerOffset;
         
         window.scrollTo({
-          top: offsetPosition,
+          top: Math.max(0, targetPosition),
           behavior: 'smooth'
         });
         history.replaceState(null, '', `#${id}`);
       }
-    }, 150);
+    }, 200);
   };
 
   return (
