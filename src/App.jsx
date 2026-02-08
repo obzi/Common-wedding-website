@@ -219,8 +219,8 @@ function Navigation({ menuOpen, setMenuOpen }) {
         // Get the actual header height dynamically
         const isMobile = window.innerWidth < 768;
         // Mobile header: h-16 = 64px, Desktop: h-20 = 80px
-        // Add buffer to show section title clearly below header
-        const headerOffset = isMobile ? 80 : 95;
+        // Add extra buffer to ensure section title is visible
+        const headerOffset = isMobile ? 100 : 95;
         
         // Get element's position relative to document top
         const rect = el.getBoundingClientRect();
