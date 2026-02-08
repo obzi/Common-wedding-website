@@ -209,12 +209,24 @@ function Navigation({ menuOpen, setMenuOpen }) {
   }, []);
 
   const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-      history.replaceState(null, '', `#${id}`);
-    }
+    // Close mobile menu first
     setMenuOpen(false);
+    
+    // Small delay to allow menu to close, then scroll
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        const headerOffset = 90; // Account for sticky header
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        history.replaceState(null, '', `#${id}`);
+      }
+    }, 100);
   };
 
   return (
