@@ -33,6 +33,7 @@ npm run build
 ```bash
 npm run preview
 ```
+Open http://localhost:3001
 
 ### Output:
 Production files are in the `dist/` folder. Upload these to any web hosting.
