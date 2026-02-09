@@ -66,8 +66,44 @@ pdf.cell(0, 10, 'Complete Beginner Guide', align='C', ln=True)
 pdf.ln(10)
 
 # ============================================================
+# TABLE OF CONTENTS
+# ============================================================
+pdf.set_font('Helvetica', 'B', 14)
+pdf.set_text_color(66, 77, 54)
+pdf.cell(0, 10, 'TABLE OF CONTENTS', ln=True)
+pdf.ln(3)
+
+pdf.set_font('Helvetica', '', 10)
+pdf.set_text_color(50, 50, 50)
+
+toc_items = [
+    ('1.', 'What You Need Before Starting Website Locally on Your PC'),
+    ('2.', 'How to Open Command Line'),
+    ('3.', 'How to Navigate to Your Project Folder'),
+    ('4.', 'Running Your Wedding Website'),
+    ('5.', 'How to Customize Your Website'),
+    ('6.', 'Build for Production (Uploading to Internet)'),
+    ('7.', 'Deployment Options (Putting Your Site Online)'),
+    ('8.', 'Command Summary (Quick Reference)'),
+    ('9.', 'Troubleshooting'),
+    ('10.', 'Project Structure'),
+    ('11.', 'Custom Domain Setup'),
+]
+
+for num, title in toc_items:
+    pdf.set_font('Helvetica', 'B', 10)
+    pdf.set_text_color(101, 119, 77)
+    pdf.cell(10, 7, num, ln=False)
+    pdf.set_font('Helvetica', '', 10)
+    pdf.set_text_color(50, 50, 50)
+    pdf.cell(0, 7, title, ln=True)
+
+pdf.ln(10)
+
+# ============================================================
 # SECTION 1: PREREQUISITES
 # ============================================================
+pdf.add_page()
 pdf.chapter_title('1. WHAT YOU NEED BEFORE STARTING WEBSITE LOCALLY ON YOUR PC')
 pdf.body_text('Before you can run your wedding website, you need to install Node.js on your computer. This is a one-time setup.')
 
