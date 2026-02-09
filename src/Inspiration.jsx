@@ -3,40 +3,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Heart } from 'lucide-react';
 import { Button } from './components/ui/button';
+import { weddingConfig } from './config/wedding.config';
 
-// Free license images from Unsplash - Wedding guest outfit inspiration
-const outfitImages = [
-  {
-    src: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=500&q=80',
-    alt: 'Woman in elegant red dress',
-    type: 'ladies'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=500&q=80',
-    alt: 'Man in elegant blue suit',
-    type: 'gentlemen'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=500&q=80',
-    alt: 'Woman in flowing purple dress',
-    type: 'ladies'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80',
-    alt: 'Man in business suit',
-    type: 'gentlemen'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=500&q=80',
-    alt: 'Woman fashion portrait',
-    type: 'ladies'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=80',
-    alt: 'Man in casual elegant shirt',
-    type: 'gentlemen'
-  }
-];
+const config = weddingConfig;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -81,11 +50,10 @@ export default function Inspiration() {
           className="text-center mb-12"
         >
           <h1 className="text-3xl md:text-4xl font-serif font-semibold text-theme-800 mb-4">
-            Outfit Inspiration
+            {config.inspiration.title}
           </h1>
           <p className="text-theme-600 max-w-xl mx-auto">
-            Get inspired for our special day! We love soft, natural tones that complement 
-            the earthy, romantic atmosphere of our celebration.
+            {config.inspiration.description}
           </p>
         </motion.div>
 
@@ -100,13 +68,7 @@ export default function Inspiration() {
             Suggested Colors
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            {[
-              { name: 'Light Sage', color: '#d6dccb' },
-              { name: 'Sage', color: '#9aab7f' },
-              { name: 'Deep Sage', color: '#65774d' },
-              { name: 'Cream', color: '#faf3e6' },
-              { name: 'Warm Beige', color: '#e5c9a8' }
-            ].map((item, i) => (
+            {config.dressCodeColors.slice(0, 5).map((item, i) => (
               <div key={i} className="flex flex-col items-center">
                 <div 
                   className="w-10 h-10 rounded-full shadow border-2 border-white" 
@@ -125,7 +87,7 @@ export default function Inspiration() {
           animate="visible"
           className="grid grid-cols-2 gap-4 md:gap-6"
         >
-          {outfitImages.map((image, index) => (
+          {config.inspiration.images.map((image, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -166,22 +128,12 @@ export default function Inspiration() {
             Helpful Tips
           </h2>
           <ul className="space-y-3 text-theme-700">
-            <li className="flex items-start gap-3">
-              <span className="text-theme-400">•</span>
-              <span>Avoid bright white or black — opt for softer, natural tones.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-theme-400">•</span>
-              <span>Comfortable shoes are a must — we'll be celebrating on grass and in a barn.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-theme-400">•</span>
-              <span>Bring a light layer for the evening — it can get cool after sunset.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-theme-400">•</span>
-              <span>Feel free to add personal touches — accessories, flowers, or a fun hat!</span>
-            </li>
+            {config.inspiration.tips.map((tip, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-theme-400">•</span>
+                <span>{tip}</span>
+              </li>
+            ))}
           </ul>
         </motion.div>
 
@@ -204,7 +156,7 @@ export default function Inspiration() {
       <footer className="bg-theme-100 py-8 mt-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <p className="text-theme-600 text-sm">
-            Jane & John • December 31, 2025
+            {config.couple.displayName} • {config.wedding.date}
           </p>
         </div>
       </footer>
