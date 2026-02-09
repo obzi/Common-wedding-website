@@ -1,0 +1,165 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowLeft, Heart } from 'lucide-react';
+import { Button } from './components/ui/button';
+import { weddingConfig } from './config/wedding.config';
+
+const config = weddingConfig;
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+export default function Inspiration() {
+  return (
+    <div className="min-h-screen bg-theme-50" data-testid="inspiration-page">
+      {/* Header */}
+      <header className="bg-white/90 backdrop-blur-sm border-b border-theme-100 sticky top-0 z-50">
+        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+          <Link 
+            to="/#" 
+            className="inline-flex items-center gap-2 text-theme-600 hover:text-theme-800 transition-colors"
+            data-testid="back-link"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span className="font-medium">Back to Wedding</span>
+          </Link>
+          <Heart className="w-5 h-5 text-theme-400" />
+        </div>
+      </header>
+
+      {/* Content */}
+      <main className="max-w-4xl mx-auto px-4 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-3xl md:text-4xl font-serif font-semibold text-theme-800 mb-4">
+            {config.inspiration.title}
+          </h1>
+          <p className="text-theme-600 max-w-xl mx-auto">
+            {config.inspiration.description}
+          </p>
+        </motion.div>
+
+        {/* Color Palette Reminder */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="bg-white rounded-2xl shadow-lg p-6 mb-12"
+        >
+          <p className="text-sm text-theme-600 mb-4 text-center font-medium">
+            Suggested Colors
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {config.dressCodeColors.slice(0, 5).map((item, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div 
+                  className="w-10 h-10 rounded-full shadow border-2 border-white" 
+                  style={{ backgroundColor: item.color }}
+                />
+                <span className="text-xs text-theme-600 mt-1">{item.name}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Image Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-2 gap-4 md:gap-6"
+        >
+          {config.inspiration.images.map((image, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="relative group"
+              data-testid={`outfit-image-${index}`}
+            >
+              <div className="aspect-[3/4] bg-theme-100 rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="absolute bottom-3 left-3 right-3">
+                <span className={`
+                  inline-block px-3 py-1 rounded-full text-xs font-medium
+                  ${image.type === 'ladies' 
+                    ? 'bg-theme-100/90 text-theme-700' 
+                    : 'bg-white/90 text-theme-700'
+                  }
+                  backdrop-blur-sm
+                `}>
+                  {image.type === 'ladies' ? 'Ladies' : 'Gentlemen'}
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Tips Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="mt-12 bg-theme-50 rounded-2xl p-6 md:p-8 border border-theme-200"
+        >
+          <h2 className="text-xl font-serif font-semibold text-theme-800 mb-4">
+            Helpful Tips
+          </h2>
+          <ul className="space-y-3 text-theme-700">
+            {config.inspiration.tips.map((tip, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-theme-400">•</span>
+                <span>{tip}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Back Button */}
+        <div className="text-center mt-12">
+          <Link 
+            to="/#" 
+            data-testid="back-to-wedding-btn"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <Button size="lg" variant="primary">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Wedding
+            </Button>
+          </Link>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-theme-100 py-8 mt-16">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <p className="text-theme-600 text-sm">
+            {config.couple.displayName} • {config.wedding.date}
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
