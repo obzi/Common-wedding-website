@@ -68,7 +68,7 @@ pdf.ln(10)
 # ============================================================
 # SECTION 1: PREREQUISITES
 # ============================================================
-pdf.chapter_title('1. WHAT YOU NEED BEFORE STARTING')
+pdf.chapter_title('1. WHAT YOU NEED BEFORE STARTING WEBSITE LOCALLY ON YOUR PC')
 pdf.body_text('Before you can run your wedding website, you need to install Node.js on your computer. This is a one-time setup.')
 
 pdf.section_title('Step 1: Download Node.js')
