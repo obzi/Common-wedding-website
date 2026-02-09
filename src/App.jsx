@@ -586,7 +586,7 @@ function WeddingContent() {
               <div className="bg-white rounded-2xl shadow-md p-6">
                 <p className="text-sm text-theme-600 mb-4 text-center">Suggested Color Palette</p>
                 <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-                  {themeData.palette.map((item, i) => (
+                  {config.dressCodeColors.map((item, i) => (
                     <div key={i} className="flex flex-col items-center" data-testid={`color-${i}`}>
                       <div 
                         className="w-12 h-12 md:w-14 md:h-14 rounded-full shadow-md border-2 border-white" 
