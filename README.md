@@ -18,7 +18,7 @@ Edit `src/config/wedding.config.js` - change names, date, photos, colors.
 ```bash
 npm run dev
 ```
-Open http://localhost:3000 in your browser.
+Open http://localhost:3001 in your browser.
 
 ---
 
