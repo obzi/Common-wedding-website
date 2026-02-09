@@ -1,142 +1,135 @@
 # 💒 Wedding Website Template
 
-A beautiful, modern wedding website template with multiple color themes, smooth animations, and easy customization.
+Beautiful, modern wedding website template with 5 color themes and easy customization.
 
-![Wedding Website Preview](https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80)
+---
 
-## ✨ Features
+## 🚀 Quick Start (3 steps)
 
-- **5 Beautiful Color Themes**: Sage Green, Blush Pink, Dusty Blue, Gold, Lavender
-- **Smooth Animations**: Parallax scrolling, fade-in effects, hover transitions
-- **Fully Responsive**: Looks great on desktop, tablet, and mobile
-- **Password Protection**: Keep your wedding details private
-- **Easy Customization**: Single config file for all content changes
-- **Modern Stack**: React 18, Tailwind CSS, Framer Motion
-
-## 🎨 Available Themes
-
-| Theme | Description | Best For |
-|-------|-------------|----------|
-| Sage Green | Natural, earthy tones | Garden/Rustic weddings |
-| Blush Pink | Romantic, soft colors | Elegant celebrations |
-| Dusty Blue | Classic, serene palette | Coastal/Formal weddings |
-| Gold | Luxurious, glamorous | Grand celebrations |
-| Lavender | Whimsical, dreamy | Enchanting weddings |
-
-## 🚀 Quick Start
-
-### Option 1: Use Pre-built Version
-1. Upload contents of `/dist` folder to your web hosting
-2. Done! Your website is live.
-
-### Option 2: Customize & Build
-1. Install Node.js (v18 or higher)
-2. Open terminal in project folder
-3. Run:
+### 1. Install
 ```bash
 npm install
+```
+
+### 2. Customize
+Edit `src/config/wedding.config.js` - change names, date, photos, colors.
+
+### 3. Run
+```bash
 npm run dev
 ```
-4. Open http://localhost:3000 in browser
-5. Edit `src/config/wedding.config.js` to customize
-6. Build for production: `npm run build`
+Open http://localhost:3000 in your browser.
 
-## 📝 Customization
+---
 
-All customization is done in a single file: `src/config/wedding.config.js`
+## 📦 Build for Production
 
-### Change Names & Date
-```javascript
-couple: {
-  partner1: { name: 'Emma', phone: '+1 555-0123' },
-  partner2: { name: 'James', phone: '+1 555-0124' },
-  displayName: 'Emma & James'
-},
-wedding: {
-  date: 'June 15, 2025',
-  venue: { name: 'Rose Garden Estate', location: 'California' }
-}
+### Build the website:
+```bash
+npm run build
 ```
 
-### Change Theme
-```javascript
-theme: 'blush'  // Options: 'sage', 'blush', 'dustyBlue', 'gold', 'lavender'
+### Preview the build locally:
+```bash
+npm run preview
 ```
 
-### Change Password
+### Output:
+Production files are in the `dist/` folder. Upload these to any web hosting.
+
+---
+
+## 🎨 Change Theme
+
+In `src/config/wedding.config.js`, change:
+```javascript
+theme: 'sage'  // Options: 'sage', 'blush', 'dustyBlue', 'gold', 'lavender'
+```
+
+Or use the theme selector button (bottom-right corner) to preview themes live.
+
+---
+
+## ✏️ Customize Content
+
+All customization is in one file: `src/config/wedding.config.js`
+
+| What to change | Where in config |
+|----------------|-----------------|
+| Names | `couple.partner1.name`, `couple.partner2.name` |
+| Wedding date | `wedding.date` |
+| Venue | `wedding.venue.name`, `wedding.venue.location` |
+| Password | `auth.password` |
+| Images | `images.hero`, `images.couple`, etc. |
+| Schedule | `schedule` array |
+| All text | `content` object |
+
+---
+
+## 🌐 Deploy to Production
+
+### Option A: Static Hosting (Netlify, Vercel)
+1. Run `npm run build`
+2. Upload `dist/` folder to Netlify/Vercel
+3. Done!
+
+### Option B: Traditional Web Hosting
+1. Run `npm run build`
+2. Upload contents of `dist/` folder via FTP
+3. Done!
+
+### Option C: GitHub Pages
+1. Push to GitHub
+2. Enable Pages in repository settings
+3. Set source to `dist/` folder
+
+---
+
+## 🔑 Password Protection
+
+Default password: `wedding25`
+
+To change it, edit in `src/config/wedding.config.js`:
 ```javascript
 auth: {
-  password: 'yourpassword',
-  enabled: true  // Set to false to disable
+  password: 'your-new-password',
+  enabled: true  // Set to false to disable password
 }
 ```
 
-### Change Images
-```javascript
-images: {
-  hero: 'https://your-image-url.com/hero.jpg',
-  couple: './images/our-photo.jpg',  // Local images go in /public/images/
-  // ... more images
-}
-```
+Share link with password: `yoursite.com?access=your-password`
 
-See `CUSTOMIZATION.md` for detailed customization guide.
+---
 
 ## 📁 Project Structure
 
 ```
 wedding-website-template/
-├── dist/                 # Production-ready files (upload these)
 ├── src/
 │   ├── config/
-│   │   ├── wedding.config.js   # ⭐ Main customization file
-│   │   └── themes.js           # Theme definitions
-│   ├── components/       # UI components
-│   ├── context/          # Theme context
-│   ├── App.jsx           # Main app component
-│   └── Inspiration.jsx   # Outfit inspiration page
-├── public/               # Static assets
-├── README.md             # This file
-└── CUSTOMIZATION.md      # Detailed guide
+│   │   ├── wedding.config.js  ← Main customization file
+│   │   └── themes.js          ← Color themes
+│   ├── App.jsx                ← Main component
+│   └── Inspiration.jsx        ← Outfit inspiration page
+├── dist/                      ← Production build (after npm run build)
+├── package.json
+└── README.md
 ```
-
-## 🛠 Tech Stack
-
-- **React 18** - UI framework
-- **Tailwind CSS 3** - Styling
-- **Framer Motion** - Animations
-- **Vite** - Build tool
-- **Vitest** - Testing
-
-## 📱 Sections Included
-
-1. **Hero** - Beautiful full-screen intro with names & date
-2. **Our Story** - About the couple
-3. **Venue & Date** - Wedding location details
-4. **Accommodation** - Guest stay information
-5. **RSVP** - Link to response form
-6. **Dress Code** - Color palette & outfit suggestions
-7. **Schedule** - Day timeline
-8. **Parking** - Directions & parking info
-9. **Photos** - Link to shared photo album
-10. **Gifts** - Gift preferences
-11. **Contact** - Contact information
-12. **Inspiration** - Outfit inspiration gallery (separate page)
-
-## 🔐 Password Protection
-
-The website is password-protected by default. Guests can:
-- Enter password on the login screen
-- Use direct link: `yoursite.com?access=yourpassword`
-
-## 📄 License
-
-This template is for personal use. You may customize and host it for your wedding.
-
-## 💬 Support
-
-If you have questions about customization, please refer to `CUSTOMIZATION.md` first.
 
 ---
 
-**Made with 💕 for your special day**
+## 💡 Tips
+
+- **Images**: Use Unsplash URLs or put your images in `public/images/`
+- **Testing**: Run `npm test` to run tests
+- **Development**: Changes auto-reload in dev mode
+
+---
+
+## ❓ Need Help?
+
+See `CUSTOMIZATION.md` for detailed customization guide.
+
+---
+
+**Made with ❤️ for your special day**
