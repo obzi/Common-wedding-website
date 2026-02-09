@@ -63,7 +63,25 @@ pdf.cell(0, 20, 'Wedding Website Template', align='C', ln=True)
 pdf.set_font('Helvetica', '', 12)
 pdf.set_text_color(100, 100, 100)
 pdf.cell(0, 10, 'Complete Beginner Guide', align='C', ln=True)
-pdf.ln(10)
+pdf.ln(8)
+
+# ============================================================
+# IMPORTANT NOTE - PASSWORD PROTECTION
+# ============================================================
+pdf.set_fill_color(255, 250, 240)
+pdf.set_draw_color(101, 119, 77)
+pdf.rect(10, pdf.get_y(), 190, 28, 'DF')
+pdf.set_xy(15, pdf.get_y() + 3)
+pdf.set_font('Helvetica', 'B', 11)
+pdf.set_text_color(66, 77, 54)
+pdf.cell(0, 6, 'IMPORTANT: Your website is password protected!', ln=True)
+pdf.set_x(15)
+pdf.set_font('Helvetica', '', 10)
+pdf.set_text_color(50, 50, 50)
+pdf.cell(0, 5, 'Default password: WeddingPassword', ln=True)
+pdf.set_x(15)
+pdf.cell(0, 5, 'You can change or disable the password - see Section 5.2 for instructions.', ln=True)
+pdf.ln(12)
 
 # ============================================================
 # TABLE OF CONTENTS
@@ -241,7 +259,11 @@ pdf.section_title('5.1 Change Names & Date')
 pdf.code_block('couple: {\n  partner1: { name: \'Emma\', phone: \'+1 555-0123\' },\n  partner2: { name: \'James\', phone: \'+1 555-0124\' },\n  displayName: \'Emma & James\'\n},\nwedding: {\n  date: \'June 15, 2025\',\n  venue: { name: \'Rose Garden\', location: \'California\' }\n}')
 
 pdf.section_title('5.2 Change Password')
+pdf.body_text('Your website is password protected by default. The default password is: WeddingPassword')
 pdf.code_block('auth: {\n  password: \'YourSecretPassword\',\n  enabled: true  // Set to false to disable password\n}')
+pdf.body_text('To share a direct link that bypasses the password screen, add ?access=YourPassword to your URL.')
+pdf.body_text('Example: yourwebsite.com?access=YourSecretPassword')
+pdf.ln(2)
 
 pdf.section_title('5.3 Change Images')
 pdf.body_text('Use Unsplash URLs or local images (put in public/images/ folder):')
@@ -259,9 +281,31 @@ pdf.section_title('5.6 Change External Links')
 pdf.code_block('links: {\n  rsvpForm: \'https://forms.google.com/your-form\',\n  photoAlbum: \'https://drive.google.com/your-album\',\n  venueMap: \'https://maps.google.com/your-location\'\n}')
 
 # ============================================================
-# SECTION 6: BUILD FOR PRODUCTION
+# SECTION 5.7: DRESS CODE COLORS
 # ============================================================
 pdf.add_page()
+pdf.section_title('5.7 Customize Dress Code Colors')
+pdf.body_text('You can customize the 6 color swatches shown in the Dress Code section. These colors are independent from the website theme and represent the colors you want your guests to wear.')
+pdf.ln(2)
+pdf.body_text('Find the "dressCodeColors" section in wedding.config.js:')
+pdf.code_block('dressCodeColors: [\n  { name: \'Light Sage\', color: \'#d6dccb\' },\n  { name: \'Sage\', color: \'#9aab7f\' },\n  { name: \'Deep Sage\', color: \'#65774d\' },\n  { name: \'Cream\', color: \'#faf3e6\' },\n  { name: \'Warm Beige\', color: \'#e5c9a8\' },\n  { name: \'Soft Gold\', color: \'#c9a962\' }\n]')
+pdf.ln(2)
+pdf.body_text('To change the colors:')
+pdf.numbered_step(1, 'Change the "name" to your desired color name (e.g., "Blush Pink")')
+pdf.numbered_step(2, 'Change the "color" value to your desired HEX color code')
+pdf.ln(2)
+pdf.body_text('How to find HEX color codes:')
+pdf.bullet_point('Google "color picker" - Google has a built-in color picker tool')
+pdf.bullet_point('Use htmlcolorcodes.com for a visual color picker')
+pdf.bullet_point('Use coolors.co to generate matching color palettes')
+pdf.ln(2)
+pdf.body_text('Example with custom colors:')
+pdf.code_block('dressCodeColors: [\n  { name: \'Blush\', color: \'#fad4d4\' },\n  { name: \'Rose\', color: \'#ec8b8b\' },\n  { name: \'Dusty Rose\', color: \'#c94a4a\' },\n  { name: \'Ivory\', color: \'#fffaf0\' },\n  { name: \'Champagne\', color: \'#f7e7ce\' },\n  { name: \'Mauve\', color: \'#e0b0b0\' }\n]')
+pdf.ln(5)
+
+# ============================================================
+# SECTION 6: BUILD FOR PRODUCTION
+# ============================================================
 pdf.chapter_title('6. BUILD FOR PRODUCTION (UPLOADING TO INTERNET)')
 
 pdf.body_text('When you are happy with your website and want to put it online, you need to create a "production build".')
@@ -281,6 +325,7 @@ pdf.ln(5)
 # ============================================================
 # SECTION 7: DEPLOYMENT OPTIONS
 # ============================================================
+pdf.add_page()
 pdf.chapter_title('7. DEPLOYMENT OPTIONS (PUTTING YOUR SITE ONLINE)')
 
 pdf.section_title('Option A: Netlify (Easiest - Free)')
@@ -309,7 +354,6 @@ pdf.ln(5)
 # ============================================================
 # SECTION 8: COMMAND SUMMARY
 # ============================================================
-pdf.add_page()
 pdf.chapter_title('8. COMMAND SUMMARY (QUICK REFERENCE)')
 
 pdf.body_text('Here are all the commands you need:')
@@ -340,6 +384,7 @@ pdf.ln(5)
 # ============================================================
 # SECTION 9: TROUBLESHOOTING
 # ============================================================
+pdf.add_page()
 pdf.chapter_title('9. TROUBLESHOOTING')
 
 pdf.section_title('"npm" is not recognized as a command')
@@ -369,7 +414,6 @@ pdf.ln(5)
 # ============================================================
 # SECTION 10: PROJECT STRUCTURE
 # ============================================================
-pdf.add_page()
 pdf.chapter_title('10. PROJECT STRUCTURE')
 
 pdf.body_text('Understanding your project files:')
