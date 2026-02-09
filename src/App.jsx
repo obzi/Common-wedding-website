@@ -458,7 +458,9 @@ function WeddingContent() {
     <div className="min-h-screen bg-cream-50">
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <HeroSection />
-      <ThemeSelector currentTheme={currentTheme} onThemeChange={setCurrentTheme} />
+      {config.showThemeSelector && (
+        <ThemeSelector currentTheme={currentTheme} onThemeChange={setCurrentTheme} />
+      )}
       
       <main className="max-w-4xl mx-auto px-4 py-12 space-y-16 md:space-y-24">
         {/* About Section */}
